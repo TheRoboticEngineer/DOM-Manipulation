@@ -1,24 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="Todo.css" /> 
-    <script type="module">
-        import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
-        console.log(uuidv4()); // ⇨ '1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed'
-      </script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="Todo.css" />
     <title>My To Do list</title>
-</head>
-<body>
-<h2>My Todos</h2>
+  </head>
+  <body>
+    <h2>My Todos</h2>
     <form id="form">
-        <input type="text" id="item" placeholder="Enter a task">
-        <button type="submit">Add Task</button>
-      </form>
+      <input type="text" id="item" placeholder="Enter a task" />
+      <button type="submit">Add Task</button>
+    </form>
 
-      <ul id="list"></ul>
-      <script src ='Todo.js'></script>
-</body>
+    <ul id="list"></ul>
+    <script src="Todo.js"></script>
+  </body>
 </html>
