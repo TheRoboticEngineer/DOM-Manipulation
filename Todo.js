@@ -1,7 +1,6 @@
 const form = document.getElementById('form');
 const itemInput = document.getElementById('item');
 const list = document.getElementById('list');
-import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
 
 const saveToLocalStorage = () => {
     // save the to-do items to local storage
