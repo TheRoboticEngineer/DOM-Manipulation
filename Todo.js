@@ -43,3 +43,26 @@ list.addEventListener('click', (e) => {
   }
   saveToLocalStorage();
 });
+// Add an event listener for the window that occurs upon a user loading the todo application
+window.addEventListener('load', () => {
+    // The event listener retrieves the to-do items saved in local storage using localStorage.getItem('items'). 
+  const savedItems = JSON.parse(localStorage.getItem('items')) || []; // Created a new constant for saved item
+    // If there are saved items, they are parsed from a JSON string using JSON.parse() function to extract what was stored.
+  for (const { isChecked, text } of savedItems) { // We loop through the parse items, creating a new li element to represent it in the todo list
+    const newItem = document.createElement('li');
+    newItem.setAttribute("id", uuidv4());
+      // Content is constructed using template literal, which also includes any items that were checked in the list, but not removed from the list,
+      // the text of the item, and the accompanying delete button
+    newItem.innerHTML = `
+      <input type="checkbox" ${isChecked ? 'checked' : ''}> 
+      ${text}
+      <button class="delete">Delete</button>
+    `;
+      //The classList.toggle() method is used to add or remove the strike class to the li element based on the isChecked property, 
+      // which determines if the item is checked or not
+    newItem.classList.toggle('strike', isChecked);
+      // the new li element is appended to the list using list.appendChild(newItem), which allows users to see the item on the screen
+    list.appendChild(newItem);
+  }
+});
+// TL;DR: Overall, this code ensures that the to-do items saved in local storage are displayed on the page when the page is refreshed.
